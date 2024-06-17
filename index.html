@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Interacción de Imagen</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #ecdefc;
+        }
+        #imagen {
+        width: 100%;
+        height: auto;
+        display: block;  
+        margin: auto;    
+        border: 2px solid #5b63b5;
+        border-radius: 10%;  
+        }
+
+        .btn {
+            width: 150px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4" id="titulo">¡Mirá la siguiente imagen!</h1>
+        <!-- Div contenedor de los botones con flexbox para poder centrarlos -->
+        <div class="d-flex justify-content-center mt-3">
+            <button id="hide" class="btn btn-danger mr-2">Ocultar Imagen</button>
+            <button id="show" class="btn btn-success">Mostrar Imagen</button>
+        </div>
+        <img src="img\depositphotos_51933801-stock-photo-labrador-puppies-in-a-basket.jpg" id="imagen" class="mt-4">
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("#imagen").hide();
+                $("#titulo").text("¡No tenemos ninguna imagen!🥺");
+            });
+            $("#show").click(function(){
+                $("#imagen").show();
+                $("#titulo").text("¡Mirá la siguiente imagen de perritos!😊");
+            });
+        });
+    </script>
+</body>
+</html>
